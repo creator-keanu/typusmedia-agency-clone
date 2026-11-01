@@ -1,9 +1,8 @@
-# Phase 2
+# Phase 3
 
-- [x] Complete Startseite with original home content and imagery.
-- [x] Expand Leistungen with original service content.
-- [x] Add a static Referenzen overview; filters and case studies stay in Phase 3.
-- [x] Expand Agentur with original agency content and imagery.
-- [x] Verify navigation, images and layouts on desktop and mobile.
+- [ ] Complete the original portfolio across all five categories.
+- [ ] Add shareable category filters and linked project pages.
+- [ ] Add project image viewing, previous/next navigation and missing-project handling.
+- [ ] Verify filters, project navigation, images and narrow-screen layouts.
 
 Contact email dispatch and later phases are outside this phase.
