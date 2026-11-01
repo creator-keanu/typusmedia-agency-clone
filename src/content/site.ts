@@ -5,7 +5,7 @@ export const site = {
   city: "38102 Braunschweig",
   phone: "(0531) 88 92 74 60",
   phoneHref: "tel:+4953188927460",
-  email: "info@typusmedia.de",
+  email: "keke28517@gmail.com",
   vatId: "DE189144698",
   url: "https://typusmedia.de",
 } as const;
