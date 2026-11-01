@@ -1,7 +1,8 @@
 # Phase 2
 
+- [ ] Complete Startseite with original home content and imagery.
 - [ ] Expand Leistungen with original service content.
-- [ ] Expand Referenzen with original projects and imagery.
+- [ ] Add a static Referenzen overview; filters and case studies stay in Phase 3.
 - [ ] Expand Agentur with original agency content and imagery.
 - [ ] Verify navigation, images and layouts on desktop and mobile.
 
