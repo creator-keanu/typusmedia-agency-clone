@@ -1,3 +1,8 @@
+import extraImage0 from "@/assets/solis.jpg.asset.json";
+import extraImage1 from "@/assets/loose.jpg.asset.json";
+import extraImage2 from "@/assets/giffhorn.jpg.asset.json";
+import extraImage3 from "@/assets/haertle.jpg.asset.json";
+import extraImage4 from "@/assets/al-duomo.jpg.asset.json";
 import portfolioImage0 from "@/assets/portfolio-01.jpg.asset.json";
 import portfolioImage1 from "@/assets/portfolio-02.jpg.asset.json";
 import portfolioImage2 from "@/assets/portfolio-03.jpg.asset.json";
@@ -111,6 +116,11 @@ export const portfolio = {
   subtitle: "Portfolio unserer Arbeiten",
   introduction: "Seit 1997 entwirft und verwirklicht unsere inhabergeführte Agentur erfolgreiche Konzepte in der klassischen und digitalen Medien-Welt. Unser Hauptsitz befindet sich in der wirtschaftsstarken Löwenstadt Braunschweig. Von hier aus operieren wir bundesweit für eine vielfältige Klientel unterschiedlicher Branchen. Als Full Service Werbeagentur sind wir vom ersten Kontakt bis zum finalen Produkt ein vertrauensvoller und kompetenter Partner an Ihrer Seite... kreativ, zielorientiert, engagiert, perfektionistisch, terminsicher und etatgerecht.",
   projects: [
+  { slug: "solis-yoga", title: "Yogaschule Solis", category: "Web", text: "Webseite für die Yogaschule Solis", features: ["Responsives Webdesign", "Webshop für Kurs- und Videobestellungen", "Kursplan-Kalender mit buchbaren Kursen unter Berücksichtigung von Platzkapazitäten", "Mehrstufige Kontaktformulare mit personalisierten Nachrichten", "Opt-In Datenschutz-Tool", "Contao Content Management System"], image: extraImage0.url, images: [extraImage0.url] },
+  { slug: "loose-schuhe", title: "Loose Schuhe", category: "Web", text: "Webdesign für Loose Schuhe", features: ["Responsives Webdesign", "Umfangreicher Slider", "Mehrere Bildergalerien", "Opt-In Datenschutz-Tool", "Contao Content Management System"], image: extraImage1.url, images: [extraImage1.url] },
+  { slug: "kanzlei-giffhorn", title: "Kanzlei Giffhorn", category: "Web", text: "Webdesign für die Steuerberater Kanzlei Giffhorn", features: ["Responsives Webdesign", "Downloadbereich mit Arbeitshilfen", "Newsbereich zur Selbstverwaltung", "Logo-Design", "Fotoshooting", "Contao Content Management System"], image: extraImage2.url, images: [extraImage2.url] },
+  { slug: "cafe-haertle", title: "Konditorei & Café Haertle", category: "Web", text: "Webdesign für die Konditorei & Café Haertle", features: ["Responsives Webdesign", "Digitale Speise- und Getränkekarte", "Mehrere Bildergalerien", "Fotoshooting", "Contao Content Management System"], image: extraImage3.url, images: [extraImage3.url] },
+  { slug: "al-duomo", title: "Al Duomo", category: "Web", text: "Webdesign für das Ristorante Al Duomo", features: ["Responsives Webdesign", "Blätterbares Event-Buch", "Location-Fotoshootings", "Verschiedene Bild-Slider", "Mehrere Bildergalerien", "Zeitgesteuerte Event-Termine", "Gutschein-Bestellservice mit automatisierten Bestellbestätigungen", "Contao Content Management System"], image: extraImage4.url, images: [extraImage4.url] },
   {
     slug: "der-butler",
     title: "Gastronomie-Webportal",
@@ -259,7 +269,7 @@ export const portfolio = {
     slug: "web-zu-den-vier-linden",
     title: "Zu den Vier Linden",
     category: "Web",
-    text: "Webdesign für die Vier Linden \\\\* Google Pagespeed Messung, Stand 08/2022 (Desktop, serverbedingte Schwankungen möglich, Pagespeed hängt auch von den verwendeten Hostingpaketen ab)",
+    text: "Webdesign für die Vier Linden",
     features: ["Responsives Webdesign", "Location- & Food-Fotoshootings", "Onepager mit Scroll-to-Menu", "Slider", "Bildergalerie", "Contao Content Management System", "Map-Integration"],
     image: portfolioImage16.url,
     images: [portfolioImage16.url],
@@ -295,7 +305,7 @@ export const portfolio = {
     slug: "editorial-gutscheinbuch",
     title: "Gutscheinbuch",
     category: "Editorial",
-    text: "Design und Druck des Bonus Buch Gutscheinbuchs 2022. 228 Seiten, perforiert, Klebebindung, kaschierter Umschlag. Inklusive Anzeigengestaltung und Textredaktion. Weitere Infos erfahren Sie [hier](https://www.typusmedia.de/gutscheinbuch-braunschweig/ \"Bonus Buch 2027 - Gutscheinbuch Region 38\").",
+    text: "Design und Druck des Bonus Buch Gutscheinbuchs 2022. 228 Seiten, perforiert, Klebebindung, kaschierter Umschlag. Inklusive Anzeigengestaltung und Textredaktion.",
     features: [],
     image: portfolioImage20.url,
     images: [portfolioImage20.url],
