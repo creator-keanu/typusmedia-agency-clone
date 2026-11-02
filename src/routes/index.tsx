@@ -63,9 +63,9 @@ function Index() {
           <Button asChild variant="link"><Link to="/referenzen">{portfolio.subtitle} <ArrowRight /></Link></Button>
         </div>
         <div className="mt-10 grid gap-8 md:grid-cols-3">
-          {portfolio.projects.slice(0, 3).map((project) => (
+          {portfolio.projects.filter((project) => ["der-butler", "bonus-buch", "solis-yoga"].includes(project.slug)).map((project) => (
             <article key={project.title}>
-              <Link to="/referenzen" className="group block focus-visible:outline-2 focus-visible:outline-ring">
+              <Link to="/referenzen_/$slug" params={{ slug: project.slug }} className="group block focus-visible:outline-2 focus-visible:outline-ring">
                 <div className="overflow-hidden bg-muted"><img src={project.image} alt={project.title} width={800} height={600} loading="lazy" className="aspect-[4/3] w-full object-contain transition-transform duration-500 motion-safe:group-hover:scale-[1.025]" /></div>
                 <p className="eyebrow mt-5">{project.category}</p>
                 <h3 className="mt-2 flex items-center justify-between gap-3 text-xl font-bold">{project.title}<ArrowRight aria-hidden="true" className="size-4 shrink-0 text-primary" /></h3>
