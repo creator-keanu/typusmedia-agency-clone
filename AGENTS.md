@@ -12,4 +12,5 @@
 - Site copy and contact data live in src/content/site.ts; pages read from it so content swaps happen in one place.
 - Shared header/footer render in src/routes/__root.tsx around <Outlet />.
 - Downloaded original media is referenced through imported src/assets/*.asset.json pointers; keep binary downloads outside the repository to use CDN delivery.
-- Core page content is static and shared from src/content/site.ts; portfolio filtering and case-study routes are reserved for the portfolio phase to keep phase checkpoints separate.
+- Core page content and portfolio projects are static and exported from src/content/site.ts; project details use exact slug lookup and never invent client challenges or measured outcomes absent from the original source.
+- Portfolio categories are validated URL search parameters so filtered galleries survive reloads and browser navigation; project detail routes use an un-nested filename to render beside the gallery.
