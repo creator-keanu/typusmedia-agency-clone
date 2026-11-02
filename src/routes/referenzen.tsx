@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, type SearchSchemaInput } from "@tanstack/react-router";
 import { PageIntro } from "@/components/site/PageIntro";
 import { pageMeta } from "@/lib/seo";
 import { portfolio } from "@/content/site";
@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/referenzen")({
-  validateSearch: (search: Record<string, unknown>) => ({ category: parsePortfolioCategory(search.category) }),
+  validateSearch: (search: { category?: unknown } & SearchSchemaInput) => ({ category: parsePortfolioCategory(search.category) }),
   head: () => ({ meta: pageMeta("Referenzen Webdesign & Printdesign | typusmedia Braunschweig", "Ausgewählte Projekte der typusmedia Werbeagentur aus Braunschweig.") }),
   component: Page,
 });
@@ -27,7 +27,7 @@ function Page() {
         <div className="mt-8 grid items-start gap-x-8 gap-y-14 md:grid-cols-2">
           {projects.map((project) => (
             <article key={project.title}>
-              <Link to="/referenzen_/$slug" params={{ slug: project.slug }} className="group block focus-visible:outline-2 focus-visible:outline-ring">
+              <Link to="/referenzen/$slug" params={{ slug: project.slug }} className="group block focus-visible:outline-2 focus-visible:outline-ring">
               <div className="overflow-hidden bg-muted"><img src={project.image} alt={`${project.title} – ${project.category} von typusmedia`} width={800} height={600} loading="lazy" className="aspect-[4/3] w-full object-contain transition-transform duration-500 motion-safe:group-hover:scale-[1.025]" /></div>
               <p className="eyebrow mt-6">{project.category}</p>
               <h2 className="mt-2 flex items-start justify-between gap-4 text-2xl font-bold group-hover:text-primary">{project.title}<ArrowUpRight aria-hidden="true" className="mt-1 size-5 shrink-0 text-primary" /></h2>

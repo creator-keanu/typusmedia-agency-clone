@@ -39,8 +39,8 @@ function ProjectPage() {
     </section>
     <nav aria-label="Projektnavigation" className="border-t bg-muted">
       <div className="mx-auto grid max-w-7xl gap-6 px-5 py-10 sm:grid-cols-2 md:px-8">
-        {previous ? <Link to="/referenzen_/$slug" params={{ slug: previous.slug }} className="group flex items-center gap-4"><ArrowLeft className="size-5 shrink-0 text-primary" /><span><span className="block text-xs text-muted-foreground">Vorheriges Projekt</span><span className="mt-2 block font-bold group-hover:text-primary">{previous.title}</span></span></Link> : <span />}
-        {next && <Link to="/referenzen_/$slug" params={{ slug: next.slug }} className="group flex items-center gap-4 sm:justify-end"><span><span className="block text-xs text-muted-foreground">Nächstes Projekt</span><span className="mt-2 block font-bold group-hover:text-primary">{next.title}</span></span><ArrowRight className="size-5 shrink-0 text-primary" /></Link>}
+        {previous ? <Link to="/referenzen/$slug" params={{ slug: previous.slug }} className="group flex items-center gap-4"><ArrowLeft className="size-5 shrink-0 text-primary" /><span><span className="block text-xs text-muted-foreground">Vorheriges Projekt</span><span className="mt-2 block font-bold group-hover:text-primary">{previous.title}</span></span></Link> : <span />}
+        {next && <Link to="/referenzen/$slug" params={{ slug: next.slug }} className="group flex items-center gap-4 sm:justify-end"><span><span className="block text-xs text-muted-foreground">Nächstes Projekt</span><span className="mt-2 block font-bold group-hover:text-primary">{next.title}</span></span><ArrowRight className="size-5 shrink-0 text-primary" /></Link>}
       </div>
     </nav>
   </>;
