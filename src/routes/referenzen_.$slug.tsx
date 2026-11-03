@@ -13,7 +13,7 @@ export const Route = createFileRoute("/referenzen_/$slug")({
     if (!project) throw notFound();
     return project;
   },
-  head: ({ loaderData }) => ({ meta: loaderData ? pageMeta(`${loaderData.title} | Referenzen typusmedia`, loaderData.text) : [...pageMeta("Projekt nicht verfügbar | typusmedia", "Referenzen der typusmedia Werbeagentur Braunschweig."), { name: "robots", content: "noindex" }] }),
+  head: ({ loaderData }) => ({ meta: loaderData ? pageMeta(`${loaderData.title} | Referenzen typusmedia`, loaderData.text, loaderData.image) : [...pageMeta("Projekt nicht verfügbar | typusmedia", "Referenzen der typusmedia Werbeagentur Braunschweig."), { name: "robots", content: "noindex" }] }),
   component: ProjectPage,
   errorComponent: PageError,
   notFoundComponent: MissingProject,
