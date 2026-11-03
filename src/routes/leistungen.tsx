@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/leistungen")({
-  head: () => ({ meta: pageMeta("Unsere Leistungen | typusmedia Braunschweig", "Webdesign, CMS Contao, Branding und Printdesign aus einer Hand.") }),
+  head: () => ({ meta: pageMeta("Unsere Leistungen | typusmedia Braunschweig", "Webdesign, CMS Contao, Branding und Printdesign aus einer Hand.", servicePage.image) }),
   component: Page,
 });
 

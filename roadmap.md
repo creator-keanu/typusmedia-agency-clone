@@ -1,8 +1,8 @@
-# Phase 3
+# Phase 4
 
-- [x] Complete the original portfolio across all five categories.
-- [x] Add shareable category filters and linked project pages.
-- [x] Add project image viewing, previous/next navigation and missing-project handling.
-- [x] Verify filters, project navigation, images and narrow-screen layouts.
+- [x] Add the contact form with client and server validation.
+- [x] Store inquiries privately in Lovable Cloud.
+- [ ] Configure owner email delivery to keke28517@gmail.com — blocked by an unconfirmed sender address and missing Resend credentials/verified domain.
+- [x] Verify a real submission, stored record, validation and mobile layout; remove the test record.
 
-Contact email dispatch and later phases are outside this phase.
+Phase 5 remains outside this phase; stop at the checkpoint.

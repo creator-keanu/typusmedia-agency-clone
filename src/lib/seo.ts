@@ -1,4 +1,4 @@
-export function pageMeta(title: string, description: string) {
+export function pageMeta(title: string, description: string, image?: string) {
   return [
     { title },
     { name: "description", content: description },
@@ -6,5 +6,6 @@ export function pageMeta(title: string, description: string) {
     { property: "og:description", content: description },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
+    ...(image?.startsWith("https://") ? [{ property: "og:image", content: image }, { name: "twitter:image", content: image }] : []),
   ];
 }

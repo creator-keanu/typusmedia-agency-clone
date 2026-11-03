@@ -67,6 +67,17 @@ export const mainNav = [
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
 
+export const contact = {
+  title: "So erreichen Sie uns …",
+  subtitle: "Ihr Projekt beginnt mit einem Gespräch.",
+  formTitle: "Projekt anfragen",
+  services: ["Webdesign", "Branding", "Printdesign", "Online-Marketing", "Fotografie", "Beratung"],
+  budgets: ["Noch offen", "Unter 2.500 €", "2.500–5.000 €", "5.000–10.000 €", "Über 10.000 €"],
+  successTitle: "Vielen Dank für Ihre Anfrage.",
+  successText: "Ihre Nachricht wurde sicher gespeichert.",
+  privacy: "Ich bin mit der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage einverstanden.",
+} as const;
+
 export const home = {
   title: "typusmedia",
   subtitle: "Webdesign-Agentur & Printdesign-Agentur",

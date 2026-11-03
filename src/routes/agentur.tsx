@@ -5,7 +5,7 @@ import { agency } from "@/content/site";
 import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/agentur")({
-  head: () => ({ meta: pageMeta("Die Agentur | typusmedia Braunschweig", "Full-Service Werbeagentur mit Herz für die Region 38.") }),
+  head: () => ({ meta: pageMeta("Die Agentur | typusmedia Braunschweig", "Full-Service Werbeagentur mit Herz für die Region 38.", agency.image) }),
   component: Page,
 });
 
