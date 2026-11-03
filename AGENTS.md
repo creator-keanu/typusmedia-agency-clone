@@ -14,3 +14,4 @@
 - Downloaded original media is referenced through imported src/assets/*.asset.json pointers; keep binary downloads outside the repository to use CDN delivery.
 - Core page content and portfolio projects are static and exported from src/content/site.ts; project details use exact slug lookup and never invent client challenges or measured outcomes absent from the original source.
 - Portfolio categories are validated URL search parameters so filtered galleries survive reloads and browser navigation; project detail routes use an un-nested filename to render beside the gallery.
+- Contact inquiries use a public write-only server function with a shared validation schema and private Cloud storage; no visitor can read submissions, and request UUIDs make retries idempotent.
