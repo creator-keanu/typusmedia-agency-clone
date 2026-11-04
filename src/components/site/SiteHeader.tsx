@@ -3,6 +3,7 @@ import { Menu, X, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { mainNav, site } from "@/content/site";
 import { Logo } from "./Logo";
+import { Button } from "@/components/ui/button";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -17,12 +18,13 @@ export function SiteHeader() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
   return (
     <header
       className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled ? "border-ink-border bg-ink/95 backdrop-blur" : "border-transparent bg-ink"
+        scrolled ? "border-ink-border bg-ink/95 backdrop-blur" : "border-ink-border bg-ink"
       } text-ink-foreground`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-20 md:px-8">
@@ -48,23 +50,20 @@ export function SiteHeader() {
           <a href={site.phoneHref} className="flex items-center gap-2 text-sm text-ink-muted hover:text-ink-foreground">
             <Phone className="h-4 w-4" /> {site.phone}
           </a>
-          <Link
-            to="/kontakt"
-            className="rounded-sm bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5"
-          >
-            Projekt anfragen
-          </Link>
+          <Button asChild><Link to="/kontakt">Projekt anfragen</Link></Button>
         </div>
 
-        <button
+        <Button
           type="button"
-          className="p-2 lg:hidden"
+          variant="ghost"
+          size="icon"
+          className="lg:hidden"
           aria-label={open ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        </Button>
       </div>
 
       {open && (
@@ -87,13 +86,7 @@ export function SiteHeader() {
             <a href={site.phoneHref} className="flex items-center gap-2 text-ink-muted">
               <Phone className="h-4 w-4" /> {site.phone}
             </a>
-            <Link
-              to="/kontakt"
-              onClick={() => setOpen(false)}
-              className="block rounded-sm bg-primary px-5 py-3.5 text-center font-bold text-primary-foreground"
-            >
-              Projekt anfragen
-            </Link>
+            <Button asChild size="lg" className="w-full"><Link to="/kontakt" onClick={() => setOpen(false)}>Projekt anfragen</Link></Button>
           </div>
         </div>
       )}
