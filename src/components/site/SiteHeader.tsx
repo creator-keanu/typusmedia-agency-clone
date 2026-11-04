@@ -23,70 +23,72 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled ? "border-ink-border bg-ink/95 backdrop-blur" : "border-ink-border bg-ink"
+      className={`sticky top-0 z-50 transition-all duration-500 ${
+        scrolled ? "border-b border-ink-border bg-ink/80 backdrop-blur-xl" : "border-b border-transparent bg-ink"
       } text-ink-foreground`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-20 md:px-8">
+      <div className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-500 md:px-8 ${scrolled ? "h-16" : "h-16 md:h-24"}`}>
         <Link to="/" aria-label="typusmedia Startseite" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Hauptnavigation">
+        <nav className="hidden items-center gap-1 rounded-full border border-ink-border bg-ink-foreground/[0.03] p-1 lg:flex" aria-label="Hauptnavigation">
           {mainNav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              className="text-sm font-semibold text-ink-muted transition-colors hover:text-ink-foreground"
-              activeProps={{ className: "text-ink-foreground! [box-shadow:inset_0_-2px_0_var(--primary)]" }}
+              className="rounded-full px-4 py-2 text-sm text-ink-muted transition-colors duration-300 hover:text-ink-foreground"
+              activeProps={{ className: "bg-ink-foreground/[0.08] text-ink-foreground!" }}
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-5 lg:flex">
-          <a href={site.phoneHref} className="flex items-center gap-2 text-sm text-ink-muted hover:text-ink-foreground">
-            <Phone className="h-4 w-4" /> {site.phone}
+        <div className="hidden items-center gap-6 lg:flex">
+          <a href={site.phoneHref} className="text-sm text-ink-muted transition-colors hover:text-ink-foreground">
+            {site.phone}
           </a>
-          <Button asChild><Link to="/kontakt">Projekt anfragen</Link></Button>
+          <Button asChild className="rounded-full px-5"><Link to="/kontakt">Anfragen</Link></Button>
         </div>
 
         <Button
           type="button"
           variant="ghost"
           size="icon"
-          className="lg:hidden"
+          className="rounded-full lg:hidden"
           aria-label={open ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
       </div>
 
       {open && (
-        <div className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col bg-ink px-5 pb-10 pt-6 lg:hidden">
-          <nav className="flex flex-col" aria-label="Mobile Navigation">
-            {mainNav.map((item) => (
+        <div className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col bg-ink px-6 pb-10 pt-10 animate-in fade-in duration-300 lg:hidden">
+          <nav className="flex flex-col gap-2" aria-label="Mobile Navigation">
+            {mainNav.map((item, i) => (
               <Link
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
                 activeOptions={{ exact: item.to === "/" }}
-                className="border-b border-ink-border py-4 font-display text-2xl font-bold text-ink-muted"
-                activeProps={{ className: "text-primary!" }}
+                className="flex items-baseline gap-4 py-2 font-display text-4xl font-semibold text-ink-muted animate-in fade-in slide-in-from-bottom-2 fill-mode-both"
+                style={{ animationDelay: `${i * 60}ms` }}
+                activeProps={{ className: "text-ink-foreground!" }}
               >
+                <span className="text-xs text-primary">0{i + 1}</span>
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="mt-auto space-y-4">
-            <a href={site.phoneHref} className="flex items-center gap-2 text-ink-muted">
+          <div className="mt-auto space-y-5">
+            <a href={site.phoneHref} className="flex items-center gap-2 text-sm text-ink-muted">
               <Phone className="h-4 w-4" /> {site.phone}
             </a>
-            <Button asChild size="lg" className="w-full"><Link to="/kontakt" onClick={() => setOpen(false)}>Projekt anfragen</Link></Button>
+            <Button asChild size="lg" className="w-full rounded-full"><Link to="/kontakt" onClick={() => setOpen(false)}>Projekt anfragen</Link></Button>
           </div>
         </div>
       )}
