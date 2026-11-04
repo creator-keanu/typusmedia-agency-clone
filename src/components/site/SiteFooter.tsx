@@ -1,26 +1,23 @@
 import { Link } from "@tanstack/react-router";
 import { mainNav, site } from "@/content/site";
 import { Logo } from "./Logo";
+import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-ink text-ink-foreground">
+    <footer className="border-t border-ink-border bg-ink text-ink-foreground">
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <div className="border-b border-ink-border pb-12">
           <p className="eyebrow">Haben wir Ihr Interesse geweckt?</p>
-          <p className="mt-4 max-w-3xl font-display text-3xl font-bold md:text-5xl">
+          <p className="mt-5 max-w-4xl font-display text-3xl font-bold leading-tight md:text-5xl">
             Es wäre uns ein großes Vergnügen, Sie persönlich kennen zu lernen.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a href={site.phoneHref} className="font-display text-2xl font-bold text-primary">
-              Tel: 0531 88 92 74 60
+              Tel: {site.phone}
             </a>
-            <Link
-              to="/kontakt"
-              className="w-fit rounded-sm border border-ink-border px-5 py-3 text-sm font-bold hover:border-primary hover:text-primary"
-            >
-              Zum Kontaktformular
-            </Link>
+            <Button asChild variant="outline" size="lg" className="w-fit"><Link to="/kontakt">Zum Kontaktformular <ArrowUpRight /></Link></Button>
           </div>
         </div>
 
