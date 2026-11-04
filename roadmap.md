@@ -1,9 +1,9 @@
 # Phase 5
 
 ## Requested visual refresh
-- [ ] Apply predominantly black backgrounds with orange accents across all pages.
-- [ ] Modernize homepage, page introductions, navigation and visual details without changing content or form behavior.
-- [ ] Add subtle motion with reduced-motion support; verify desktop and mobile navigation, portfolio and form presentation.
+- [x] Apply predominantly black backgrounds with orange accents across all pages.
+- [x] Modernize homepage, page introductions, navigation and visual details without changing content or form behavior.
+- [x] Add subtle motion with reduced-motion support; verify desktop and mobile navigation, portfolio and form presentation.
 
 - [x] Add the contact form with client and server validation.
 - [x] Store inquiries privately in Lovable Cloud.
