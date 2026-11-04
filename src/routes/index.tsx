@@ -23,8 +23,8 @@ function Index() {
         <div className="hero-scrim absolute inset-0 -z-10" />
         <div className="relative mx-auto max-w-7xl px-5 pb-12 pt-16 md:px-8 md:pb-10 md:pt-24">
           <p className="eyebrow flex items-center gap-3"><span className="h-px w-8 bg-primary" aria-hidden="true" />Werbeagentur Braunschweig</p>
-          <h1 className="mt-7 break-words text-5xl font-black leading-[1.05] sm:text-7xl lg:text-8xl">{home.title}<span className="text-primary">.</span></h1>
-          <p className="mt-6 max-w-lg font-display text-3xl font-bold leading-tight md:text-5xl">{home.slogan}</p>
+          <h1 className="mt-7 break-words text-5xl font-semibold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">{home.title}<span className="text-primary">.</span></h1>
+          <p className="mt-6 max-w-lg font-display text-3xl font-light leading-tight text-ink-muted md:text-5xl">{home.slogan}</p>
           <p className="mt-7 max-w-sm text-base leading-7 text-ink-muted md:text-lg">{home.subtitle}</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button asChild size="lg" className="h-12"><Link to="/kontakt">Projekt anfragen <ArrowRight /></Link></Button>
