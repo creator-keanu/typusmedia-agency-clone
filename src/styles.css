@@ -179,8 +179,8 @@ main article:hover { transform: translateY(-4px); }
   opacity: 0;
   transform: translateY(-100%) scale(0.99);
   transition:
-    transform 460ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 260ms ease,
+    transform 460ms cubic-bezier(0.4, 0, 1, 1),
+    opacity 240ms ease,
     visibility 0s linear 460ms;
 }
 .menu-panel[data-open="true"] {
@@ -188,7 +188,7 @@ main article:hover { transform: translateY(-4px); }
   opacity: 1;
   transform: translateY(0) scale(1);
   transition:
-    transform 640ms cubic-bezier(0.32, 0.72, 0, 1),
+    transform 700ms cubic-bezier(0.33, 1, 0.68, 1),
     opacity 220ms ease,
     visibility 0s;
 }
@@ -199,7 +199,13 @@ main article:hover { transform: translateY(-4px); }
     opacity 300ms ease,
     transform 480ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.menu-panel[data-open="true"] .menu-item { opacity: 1; transform: translateY(0); }
+.menu-panel[data-open="true"] .menu-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 420ms ease,
+    transform 620ms cubic-bezier(0.33, 1, 0.68, 1);
+}
 .menu-glow {
   position: absolute;
   inset: 0;
