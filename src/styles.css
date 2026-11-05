@@ -169,47 +169,59 @@ main article:hover { transform: translateY(-4px); }
 @keyframes reveal-in { from { opacity: 0.35; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes art-arrive { from { opacity: 0.5; transform: scale(1.035); } to { opacity: 1; transform: scale(1); } }
 
-/* Mobile navigation: panel, links and toggle icon animate on open and on close. */
+/* Mobile navigation: slow, clearly visible slide + blur + staggered links, on open and close. */
 .menu-panel {
   visibility: hidden;
   pointer-events: none;
+  opacity: 0;
   transform: translateY(-100%);
-  will-change: transform;
+  clip-path: inset(0 0 100% 0 round 0 0 40px 40px);
+  will-change: transform, clip-path;
   overflow-y: auto;
   transition:
-    transform 650ms cubic-bezier(0.65, 0, 0.35, 1),
-    visibility 0s linear 650ms;
+    transform 1100ms cubic-bezier(0.7, 0, 0.3, 1),
+    clip-path 1100ms cubic-bezier(0.7, 0, 0.3, 1),
+    opacity 900ms ease 200ms,
+    visibility 0s linear 1100ms;
 }
 .menu-panel[data-open="true"] {
   visibility: visible;
   pointer-events: auto;
+  opacity: 1;
   transform: translateY(0);
+  clip-path: inset(0 0 0 0 round 0);
   transition:
-    transform 800ms cubic-bezier(0.65, 0, 0.35, 1),
+    transform 1300ms cubic-bezier(0.7, 0, 0.3, 1),
+    clip-path 1300ms cubic-bezier(0.7, 0, 0.3, 1),
+    opacity 500ms ease,
     visibility 0s;
 }
 .menu-item {
   opacity: 0;
-  transform: translateY(30px);
+  filter: blur(8px);
+  transform: translateY(70px) skewY(4deg);
   transition:
-    opacity 300ms ease,
-    transform 480ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity 500ms ease,
+    filter 500ms ease,
+    transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-panel[data-open="true"] .menu-item {
   opacity: 1;
-  transform: translateY(0);
+  filter: blur(0);
+  transform: none;
   transition:
-    opacity 420ms ease,
-    transform 620ms cubic-bezier(0.33, 1, 0.68, 1);
+    opacity 900ms ease,
+    filter 900ms ease,
+    transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .menu-glow {
   position: absolute;
   inset: 0;
   pointer-events: none;
   opacity: 0;
-  transform: scale(0.8);
-  background-image: radial-gradient(ellipse 70% 50% at 12% 0%, color-mix(in oklab, var(--primary) 14%, transparent), transparent 70%);
-  transition: opacity 700ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.6);
+  background-image: radial-gradient(ellipse 80% 60% at 12% 0%, color-mix(in oklab, var(--primary) 26%, transparent), transparent 70%);
+  transition: opacity 1200ms ease, transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .menu-panel[data-open="true"] .menu-glow { opacity: 1; transform: scale(1); }
 
@@ -247,12 +259,4 @@ main article:hover { transform: translateY(-4px); }
 @media (prefers-reduced-motion: reduce) {
   .hero-art { animation: art-fade 900ms ease-out both; }
   main article:hover { transform: none; }
-  .menu-panel,
-  .menu-panel[data-open="true"] { transform: none; will-change: opacity; }
-  .menu-panel { opacity: 0; transition: opacity 320ms ease, visibility 0s linear 320ms; }
-  .menu-panel[data-open="true"] { opacity: 1; transition: opacity 360ms ease, visibility 0s; }
-  .menu-item,
-  .menu-panel[data-open="true"] .menu-item { transform: none; }
-  .menu-glow,
-  .menu-panel[data-open="true"] .menu-glow { transform: none; }
 }
