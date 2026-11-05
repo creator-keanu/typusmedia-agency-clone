@@ -98,7 +98,7 @@ export function SiteHeader() {
                 onClick={close}
                 activeOptions={{ exact: item.to === "/" }}
                 className="menu-item flex items-baseline gap-4 py-2 font-display text-4xl font-semibold text-ink-muted"
-                style={{ transitionDelay: `${open ? 150 + index * 65 : (count - 1 - index) * 45}ms` }}
+                style={{ transitionDelay: `${open ? 450 + index * 130 : (count - 1 - index) * 80}ms` }}
                 activeProps={{ className: "text-ink-foreground!" }}
               >
                 <span className="text-xs text-primary">0{index + 1}</span>
@@ -108,7 +108,7 @@ export function SiteHeader() {
           </nav>
           <div
             className="menu-item mt-auto space-y-5"
-            style={{ transitionDelay: `${open ? 190 + count * 65 : 0}ms` }}
+            style={{ transitionDelay: `${open ? 500 + count * 130 : 0}ms` }}
           >
             <a href={site.phoneHref} className="flex items-center gap-2 text-sm text-ink-muted">
               <Phone className="h-4 w-4" /> {site.phone}
