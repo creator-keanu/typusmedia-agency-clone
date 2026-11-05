@@ -153,10 +153,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
 }
 
 /* Shared editorial presentation; motion never hides content awaiting JavaScript. */
@@ -244,8 +240,19 @@ main article:hover { transform: translateY(-4px); }
   .hero-art { object-position: 68% center; }
   .hero-scrim { background: var(--hero-overlay-mobile); }
 }
+/* Reduced motion: keep gentle fades instead of removing all animation; drop large movement. */
+.reveal-fade { animation: reveal-fade 600ms ease both; }
+@keyframes reveal-fade { from { opacity: 0.35; } to { opacity: 1; } }
+@keyframes art-fade { from { opacity: 0.5; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .menu-panel { will-change: auto; }
+  .hero-art { animation: art-fade 900ms ease-out both; }
   main article:hover { transform: none; }
+  .menu-panel,
+  .menu-panel[data-open="true"] { transform: none; will-change: opacity; }
+  .menu-panel { opacity: 0; transition: opacity 320ms ease, visibility 0s linear 320ms; }
+  .menu-panel[data-open="true"] { opacity: 1; transition: opacity 360ms ease, visibility 0s; }
+  .menu-item,
+  .menu-panel[data-open="true"] .menu-item { transform: none; }
+  .menu-glow,
+  .menu-panel[data-open="true"] .menu-glow { transform: none; }
 }

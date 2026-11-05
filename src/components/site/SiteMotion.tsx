@@ -4,11 +4,12 @@ import { useLocation } from "@tanstack/react-router";
 export function SiteMotion() {
   const pathname = useLocation({ select: (location) => location.pathname });
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const enterClass = reduced ? "reveal-fade" : "reveal-enter";
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add("reveal-enter");
+        entry.target.classList.add(enterClass);
         observer.unobserve(entry.target);
       });
     }, { threshold: 0.08 });
