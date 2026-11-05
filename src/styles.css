@@ -177,27 +177,27 @@ main article:hover { transform: translateY(-4px); }
 .menu-panel {
   visibility: hidden;
   opacity: 0;
-  transform: translateY(-100%);
+  transform: translateY(-100%) scale(0.99);
   transition:
-    transform 620ms cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 420ms ease,
-    visibility 0s linear 620ms;
+    transform 460ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 260ms ease,
+    visibility 0s linear 460ms;
 }
 .menu-panel[data-open="true"] {
   visibility: visible;
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   transition:
-    transform 620ms cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 240ms ease,
+    transform 640ms cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 220ms ease,
     visibility 0s;
 }
 .menu-item {
   opacity: 0;
   transform: translateY(30px);
   transition:
-    opacity 340ms ease,
-    transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 300ms ease,
+    transform 480ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-panel[data-open="true"] .menu-item { opacity: 1; transform: translateY(0); }
 .menu-glow {
