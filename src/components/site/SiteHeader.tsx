@@ -87,7 +87,7 @@ export function SiteHeader() {
       </header>
 
       {/* Rendered outside <header> so the header's backdrop-blur never traps the fixed panel. */}
-      <div className="fixed inset-0 z-40 lg:hidden" aria-hidden={!open}>
+      <div className="pointer-events-none fixed inset-0 z-40 lg:hidden" aria-hidden={!open}>
         <div className="menu-panel absolute inset-0 flex flex-col bg-ink px-6 pb-10 pt-[84px] md:pt-[116px]" data-open={open} inert={!open}>
           <div className="menu-glow" aria-hidden />
           <nav className="flex flex-col gap-2" aria-label="Mobile Navigation">
