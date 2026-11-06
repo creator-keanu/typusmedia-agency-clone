@@ -24,7 +24,7 @@ function Page() {
           {portfolioCategories.map((item) => <Button key={item} asChild variant={category === item ? "default" : "ghost"}><Link to="/referenzen" search={{ category: item }} resetScroll={false} aria-current={category === item ? "page" : undefined}>{item}</Link></Button>)}
         </nav>
         <p className="mt-5 text-sm text-muted-foreground" aria-live="polite">{projects.length} Projekte · {category}</p>
-        <div className="mt-8 grid items-start gap-x-8 gap-y-14 md:grid-cols-2">
+        <div key={category} className="project-grid-anim mt-8 grid items-start gap-x-8 gap-y-14 md:grid-cols-2">
           {projects.map((project) => (
             <article key={project.title}>
               <Link to="/referenzen/$slug" params={{ slug: project.slug }} className="group block focus-visible:outline-2 focus-visible:outline-ring">
